@@ -15,4 +15,4 @@ ENV PYTHONPATH "${APP_HOME}/src"
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Run the API with gunicorn
-CMD exec gunicorn --bind :8080 --workers 1 --threads 8 --access-logfile access.log src.app:app
+CMD exec gunicorn --bind 0.0.0.0:8094 --workers 1 --threads 8 --access-logfile access.log src.app:app
