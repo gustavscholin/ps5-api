@@ -5,6 +5,7 @@ from flask import Flask, jsonify
 from retailers.elgiganten import ElgigantenProductStockScraper
 from retailers.inet import InetProductStockScraper
 from retailers.media_markt import MediaMarktProductStockScraper
+from src.retailers.netonnet import NetOnNetProductStockScraper
 from src.retailers.webhallen import WebhallenProductStockScraper
 
 app = Flask(__name__)
@@ -19,6 +20,7 @@ SCRAPING_CLASSES = {
     "elgiganten": ElgigantenProductStockScraper,
     "inet": InetProductStockScraper,
     "webhallen": WebhallenProductStockScraper,
+    "netonnet": NetOnNetProductStockScraper,
 }
 
 
