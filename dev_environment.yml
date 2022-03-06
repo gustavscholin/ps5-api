@@ -1,4 +1,4 @@
-name: ps5-api
+name: ps5-api_dev
 channels:
   - conda-forge
 dependencies:
@@ -8,3 +8,4 @@ dependencies:
   - Flask=2.0.2
   - gunicorn=20.1.0
   - pre-commit=2.17.0
+  - psycopg2=2.9.3
