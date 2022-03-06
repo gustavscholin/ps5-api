@@ -7,5 +7,10 @@ class WebhallenProductStockScraper:
 
     @classmethod
     def scrape(cls, url: str):
-        response = requests.get(url)
-        return response.status_code == 200
+        api_response = requests.get(url)
+        data = api_response.json()
+        for i, s in data["product"]["stock"].items():
+            if i in ("web", "supplier", "orders") or i.isnumeric():
+                if s > 0:
+                    return True
+        return False
